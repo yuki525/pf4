@@ -1,0 +1,37 @@
+<div class="container pl-5 mb-5">
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-12 col-lg-6 border border-top-0 mt-5">
+      <h1 class="fas fa-user-plus">ログイン</h1>
+      <%= form_for(:session, url: login_path) do |f| %>
+
+
+
+        <div class="field">
+          <%= f.label :メールアドレス, class: "form-label" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス" %>
+        </div>
+
+
+
+        <div class="field">
+          <%= f.label :パスワード, class: "form-label" %>
+
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "パスワード" %>
+        </div>
+
+
+
+
+        <div class="row justify-content-end">
+          <div class="col-3">
+            <%= f.submit "Sign up", class: "btn btn-outline-success rounded-pill" %>
+          </div>
+        </div>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
+

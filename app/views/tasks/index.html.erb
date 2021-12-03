@@ -1,0 +1,10 @@
+<div class = "container mx-auto m-5">
+
+
+  <h1>タスク一覧</h1>
+  <% if logged_in? %>
+    <%= render 'tasks/logged_in' %>
+  <% else %>
+    <%= render 'tasks/not_logged_in' %>
+  <% end %>
+</div>
