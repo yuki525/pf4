@@ -1,0 +1,24 @@
+ <div class="container">
+  <div class = "row ">
+    <div class="col-1 h1 mt-1" href="/">
+      <%= link_to  root_path, class: "homelink" do %>
+        <%= image_tag asset_path("icon1.jpeg"), class: 'headerimage' %>
+      <% end %>
+    </div>
+     <div class="col mt-1" >
+     　<h1>TODOリスト</h1>
+    </div>
+  </div>
+
+
+　<%= form_with url: tasks_search_path, method: :get, local: true do |f| %>
+  <div class="row justify-content-end ">
+    <div class="col-3 my-3">
+      <%= f.text_field :keyword, value: @keyword, class:"form-control" %>
+    </div>
+    <div class="col-1 my-3">
+      <%= f.submit "検索", class:"btn btn-success flex-shrink-0" %>
+    </div>
+  </div>
+  <% end %>
+</div>

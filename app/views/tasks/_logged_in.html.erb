@@ -1,21 +1,27 @@
-<h2>タスク一覧</h2>
-<table>
-    <thead>
+
+<table class="table table-success table-bordered table-hover">
+    <thead class="table-light">
       <tr>
-        <th>タスク名</th>
-        <th>タスク内容</th>
+        <th><%= sort_order "title", "タスク名" %></th>
+        <th><%= sort_order "body", "タスク内容" %></th>
+        <th><%= sort_order "importance", "重要度" %></th>
       </tr>
     </thead>
     <tbody>
       <% @tasks.each do |task| %>
+
         <tr>
-          <td><%= task.title %></td>
-          <td><%= task.body %></td>
-          <td><%= link_to "編集", edit_task_path(task) %></td>
-          <td><%= link_to "削除", task_path(task), method: :delete %></td>
+
+            <td><%= task.title %></td>
+            <td><%= task.body %></td>
+            <td><%= task.importance %></td>
+            <td><%= link_to "編集", edit_task_path(task) %></td>
+            <td><%= link_to "完了", task_path(task), method: :delete %></td>
+
         </tr>
+
       <% end %>
     </tbody>
 </table>
-<%= link_to "タスク追加", new_task_path %>
-<%= link_to "ログアウト", logout_path, method: :delete %>
+<%= link_to "タスク追加", new_task_path, class:"btn btn-success flex-shrink-0" %>
+<%= link_to "ログアウト", logout_path, method: :delete, class:"btn btn-danger flex-shrink-0" %>

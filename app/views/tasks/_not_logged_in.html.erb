@@ -1,3 +1,5 @@
-<p>タスクの管理ができるアプリです。まずはログインをしてください。</p>
-<%= link_to "ログイン", login_path%>
-<%= link_to "新規登録", new_user_path%>
+<div class = "container mx-auto m-5">
+  <p>タスクの管理ができるアプリです。まずはログインをしてください。</p>
+  <%= link_to "ログイン", login_path, class: "btn btn-outline-primary rounded-pill" %>
+  <%= link_to "新規登録", new_user_path, class: "btn btn-outline-primary rounded-pill" %>
+</div>
