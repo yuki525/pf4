@@ -46,7 +46,8 @@ class TasksController < ApplicationController
     @keyword = params[:keyword]
     render "index"
   end
-
+  
+  #ストロングパラメーター
   private
     def task_params
       params.require(:task).permit(:title, :body, :importance)
